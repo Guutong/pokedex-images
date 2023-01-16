@@ -1,0 +1,9 @@
+# in your workflow config file
+jobs:
+  convert-to-raw-url-job:
+    steps:
+    - name: Convert a url
+      id: convert-to-raw-url
+      uses: actioncloud/github-raw-url@v1
+      with:
+        github-url: ${{ previous-step.outputs.github-url }}
